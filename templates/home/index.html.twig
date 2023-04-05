@@ -4,28 +4,17 @@
 
 {% block body %}
 <div class="container">
-    <div class="row justify-content-md-center">
-        <div class="col col-lg-2">
-        </div>
-        <div class="col-md-auto">
-            <h1>Genres</h1>
-        </div>
-        <div class="col col-lg-2">
-        </div>
-    </div>
+   <h1 class="text-center mt-4">Genres</h1>
 
     <div class="row justify-content-lg-center">
-        {% for genre in genres %}
-        <div class="col col-lg-4">
-            <a href="{{ path('genre', {'id': genre.id}) }}"></a>
-        </div>
-        <div class="col col-lg-4">
-            <a href=""></a>
-        </div>
-        <div class="col col-lg-4">
-            <a href=""></a>
+        {% for genre in Genres %}
+        <div class="col col-lg-3">
+            <a href="{{ path('Genres', {'id': genre.id}) }}">{{ genre.name }}</a>
         </div>
         {% endfor %}
+        <div class="text-left mt-4">
+            <a href="#"></a>
+        </div>
     </div>
 
 </div>

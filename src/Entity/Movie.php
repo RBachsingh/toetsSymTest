@@ -28,7 +28,7 @@ class Movie
 
     #[ORM\ManyToOne(inversedBy: 'movies')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?genre $genre = null;
+    private ?Genre $genre = null;
 
     #[ORM\ManyToOne(inversedBy: 'movies')]
     #[ORM\JoinColumn(nullable: false)]
@@ -87,12 +87,12 @@ class Movie
         return $this;
     }
 
-    public function getGenre(): ?genre
+    public function getGenre(): ?Genre
     {
         return $this->genre;
     }
 
-    public function setGenre(?genre $genre): self
+    public function setGenre(?Genre $genre): self
     {
         $this->genre = $genre;
 

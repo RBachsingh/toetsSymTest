@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\TopActorRepository;
+use App\Repository\TopactorRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: TopActorRepository::class)]
-class TopActor
+#[ORM\Entity(repositoryClass: TopactorRepository::class)]
+class Topactor
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]

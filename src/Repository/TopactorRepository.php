@@ -2,26 +2,26 @@
 
 namespace App\Repository;
 
-use App\Entity\TopActor;
+use App\Entity\Topactor;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<TopActor>
+ * @extends ServiceEntityRepository<Topactor>
  *
- * @method TopActor|null find($id, $lockMode = null, $lockVersion = null)
- * @method TopActor|null findOneBy(array $criteria, array $orderBy = null)
- * @method TopActor[]    findAll()
- * @method TopActor[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Topactor|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Topactor|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Topactor[]    findAll()
+ * @method Topactor[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class TopActorRepository extends ServiceEntityRepository
+class TopactorRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, TopActor::class);
+        parent::__construct($registry, Topactor::class);
     }
 
-    public function save(TopActor $entity, bool $flush = false): void
+    public function save(Topactor $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);
 
@@ -30,7 +30,7 @@ class TopActorRepository extends ServiceEntityRepository
         }
     }
 
-    public function remove(TopActor $entity, bool $flush = false): void
+    public function remove(Topactor $entity, bool $flush = false): void
     {
         $this->getEntityManager()->remove($entity);
 
@@ -40,7 +40,7 @@ class TopActorRepository extends ServiceEntityRepository
     }
 
 //    /**
-//     * @return TopActor[] Returns an array of TopActor objects
+//     * @return Topactor[] Returns an array of Topactor objects
 //     */
 //    public function findByExampleField($value): array
 //    {
@@ -54,7 +54,7 @@ class TopActorRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?TopActor
+//    public function findOneBySomeField($value): ?Topactor
 //    {
 //        return $this->createQueryBuilder('t')
 //            ->andWhere('t.exampleField = :val')

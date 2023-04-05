@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 04 apr 2023 om 12:51
+-- Gegenereerd op: 05 apr 2023 om 13:57
 -- Serverversie: 10.4.24-MariaDB
 -- PHP-versie: 8.1.6
 
@@ -56,6 +56,15 @@ CREATE TABLE `genre` (
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Gegevens worden geëxporteerd voor tabel `genre`
+--
+
+INSERT INTO `genre` (`id`, `name`) VALUES
+(1, 'Komedie'),
+(2, 'sciencefiction'),
+(3, 'superhero fiction');
+
 -- --------------------------------------------------------
 
 --
@@ -90,6 +99,17 @@ CREATE TABLE `movie` (
   `top_actor_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Gegevens worden geëxporteerd voor tabel `movie`
+--
+
+INSERT INTO `movie` (`id`, `title`, `description`, `year`, `budget`, `genre_id`, `top_actor_id`) VALUES
+(1, 'Notting Hill', 'William Thacker gelooft zijn ogen niet als Anna Scott, een Amerikaanse filmster, zijn boekwinkel bezoekt. Hij voelt zich tot haar en haar ongewone leven aangetrokken en er ontwikkelt zich tussen hen een fragiele liefde die zwaar beproefd wordt.', 1999, '42000000.00', 1, 3),
+(2, 'Deadpool', 'Wade Wilson wordt door een gestoorde wetenschapper gemarteld maar ook van superkrachten voorzien. Gewapend met zijn krachten - en gevoel voor humor - besluit hij wraak te nemen.', 2016, NULL, 2, 2),
+(3, 'Red Notice', 'Interpol-agent John Hartley wordt opgedragen de meest gezochte kunstdief ter wereld op te sporen. Tijdens zijn zoektocht kruist zijn pad dat van Nolan Booth, de beruchte zwendelaar. Noodgedwongen slaan ze de handen ineen.', 2021, '7000000.00', 1, 1),
+(4, 'Avatars', 'Een ex-marinier landt op een vreemde planeet met blauwe buitenaardse wezens. Hij wordt verliefd op een van de inboorlingen en besluit voor haar soort te vechten als de mens aanvalt.', 2009, NULL, 2, 4),
+(5, 'Avengers: Endgame', 'Tony Stark vaart stuurloos door de ruimte zonder eten of drinken. Terwijl zijn zuurstofvoorraad begint af te nemen, stuurt hij een bericht naar Pepper Potts.', 2019, NULL, 3, 5);
+
 -- --------------------------------------------------------
 
 --
@@ -102,6 +122,17 @@ CREATE TABLE `top_actor` (
   `fname` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `lname` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `top_actor`
+--
+
+INSERT INTO `top_actor` (`id`, `fname`, `lname`) VALUES
+(1, 'Dwayne', 'Johnson'),
+(2, 'Ryan', 'Reynolds'),
+(3, 'Julia', 'Roberts'),
+(4, 'Zoe', 'Saldana'),
+(5, 'Chris', 'Hemsworth');
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -150,7 +181,7 @@ ALTER TABLE `top_actor`
 -- AUTO_INCREMENT voor een tabel `genre`
 --
 ALTER TABLE `genre`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT voor een tabel `messenger_messages`
@@ -162,13 +193,13 @@ ALTER TABLE `messenger_messages`
 -- AUTO_INCREMENT voor een tabel `movie`
 --
 ALTER TABLE `movie`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT voor een tabel `top_actor`
 --
 ALTER TABLE `top_actor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Beperkingen voor geëxporteerde tabellen

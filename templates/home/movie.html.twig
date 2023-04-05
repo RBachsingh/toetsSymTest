@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+    <div class="container">
+
+        <h1 class="text-center mt-4"></h1>
+
+        <div class="row justify-content-lg-center">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Year</th>
+                    <th scope="col">Budget</th>
+                </tr>
+                </thead>
+                {% for movie in movies %}
+                <tbody>
+                <tr>
+
+                    <td>{{ movie.title }}</td>
+                    <td>{{ movie.description }}</td>
+                    <td>{{ movie.year }}</td>
+                    <td>{{ movie.budget }}</td>
+
+                    {% endfor %}
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
